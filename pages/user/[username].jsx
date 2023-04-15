@@ -1,6 +1,5 @@
 import Layout from '../../components/layout'
 import Link from 'next/link'
-import { readdir } from 'fs/promises';
 import fsPromises from 'fs/promises';
 import path from 'path'
 
@@ -23,28 +22,43 @@ export default function HomePage( {username, objectData}) {
             <><a href={objectData['GitHub']}>GitHub</a><br/></>
           : 
           <span></span>}
+          {Object.keys(objectData).includes("Twitter") ?
+            <><a href={objectData['Twitter']}>Twitter</a><br/></>
+          : 
+          <span></span>}
         </Layout>
     );
 }
 
 export async function getStaticPaths() {
-    const directoryPath = path.join(process.cwd(), 'users/');
-    const paths = [];
-    const files = await readdir(directoryPath);
-    files.forEach(function (file) {
-        paths.push("/user/" + file.substring(0, file.indexOf(".")));
-    });
-    return {
-      paths,
-      fallback: false,
-    };
-  }
+  const Filehound = require('filehound');
+
+  const subdirectories = Filehound.create()
+    .path("art")
+    .directory()
+    .findSync();
+  console.log(subdirectories);
+  const paths = [];
+  subdirectories.forEach(function (file) {
+      paths.push("/user/" + file.split("/")[1]);
+  });
+  console.log(paths)
+  return {
+    paths,
+    fallback: false,
+  };
+}
   
   export async function getStaticProps({ params }) {
     const username = params.username;
-    const filePath = path.join(process.cwd(), `users/${username}.json`);
-    const jsonData = await fsPromises.readFile(filePath);
-    const objectData = JSON.parse(jsonData);
+    const filePath = path.join(process.cwd(), `art/${username}/userinfo.json`);
+    var objectData;
+    try{
+      const jsonData = await fsPromises.readFile(filePath);
+      objectData = JSON.parse(jsonData);
+    } catch {
+      objectData = {}
+    }
     return {
       props: {
         username,
