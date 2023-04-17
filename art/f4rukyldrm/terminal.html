@@ -1,0 +1,136 @@
+<div class="terminal-container">
+    <div class="terminal-header">
+        <div class="plus-btn">+</div>
+        <div class="name">faruk@ubuntu: ~</div>
+        <div class="btn-container">
+            <div class="hide-btn">-</div>
+            <div class="maximize-btn">o</div>
+            <div class="close-btn">x</div>
+        </div>
+    </div>
+    <div class="terminal-body">
+        <div class="current-line">
+            <div class="name line">faruk@ubuntu <span class="colon">:</span> <span class="wavy-thing">~</span><span
+                    class="dollar-sign">$</span></div>
+            <div class="cursor"></div>
+        </div>
+    </div>
+</div>
+<style>
+    .terminal-container {
+        box-sizing: border-box;
+        width: 450px;
+        height: 350px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        color: #ccc;
+        font-family: arial;
+        font-size: 16px;
+        user-select: none;
+    }
+
+    .terminal-header {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        width: 100%;
+        height: 40px;
+        background-color: #222;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
+    .plus-btn {
+        font-weight: 500;
+        height: 25px;
+        width: 25px;
+        background-color: #333;
+        text-align: center;
+        line-height: 25px;
+        border-radius: 3px;
+        border: .3px solid #111;
+    }
+
+    .name {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .btn-container * {
+        height: 20px;
+        width: 20px;
+        background-color: #333;
+        text-align: center;
+        border-radius: 50%;
+        font-weight: 500;
+    }
+
+    .plus-btn:hover,
+    .btn-container *:hover {
+        background-color: #444;
+    }
+
+    .terminal-body {
+        width: 100%;
+        height: 310px;
+        background-color: #2C001E;
+    }
+
+    .current-line {
+        display: flex;
+        align-items: center;
+        gap: 7.5px;
+        box-sizing: border-box;
+        height: 25px;
+        color: #358856;
+    }
+
+    .line {
+        display: inline-block;
+        padding-left: 5px;
+    }
+
+    .colon {
+        color: white;
+    }
+
+    .wavy-thing {
+        color: darkblue;
+    }
+
+    .dollar-sign {
+        color: white;
+        font-weight: 100;
+    }
+
+    .cursor {
+        width: 10px;
+        height: 80%;
+        display: inline-block;
+        background-color: white;
+        animation: animate step-start 1s infinite;
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
