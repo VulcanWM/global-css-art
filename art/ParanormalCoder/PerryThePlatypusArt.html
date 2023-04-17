@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="head">
+    <div class="ear"></div>
+    <div class="eye"></div>
+    <div class="eye2"></div>
+    <div class="nose"></div>
+    <div class="mouth"></div>
+  </div>
+  <div class="body">
+    <div class="leg"></div>
+    <div class="leg"></div>
+    <div class="leg"></div>
+    <div class="leg"></div>
+    <div class="tail"></div>
+  </div>
+</div>
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #69c9d0;
+  }
+
+  .head {
+    width: 150px;
+    height: 100px;
+    border-radius: 50% 50% 20% 20%;
+    background-color: #00a8a8;
+    position: relative;
+    transform: rotate(-20deg);
+    overflow: hidden;
+  }
+
+  .eye {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    z-index: 1;
+  }
+
+  .eye2 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    z-index: 1;
+  }
+
+  .mouth {
+    width: 75px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: orange;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .body {
+    width: 200px;
+    height: 150px;
+    background-color: #00a8a8;
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(10deg);
+  }
+
+  .leg {
+    width: 20px;
+    height: 60px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -20px;
+    left: 10px;
+    border-radius: 50%;
+    transform: rotate(-15deg);
+    background-color: orange;
+  }
+
+  .leg:nth-child(2) {
+    left: 40px;
+    transform: rotate(15deg);
+    background-color: orange;
+  }
+
+  .leg:nth-child(3) {
+    left: 90px;
+    transform: rotate(15deg);
+    background-color: orange;
+  }
+
+  .leg:nth-child(4) {
+    left: 120px;
+    transform: rotate(-15deg);
+    background-color: orange;
+  }
+
+  /*.tail {
+    width: 120px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    bottom: 10;
+    right: 0;
+    border-radius: 0 50% 0 0;
+    transform:*/
+</style>
