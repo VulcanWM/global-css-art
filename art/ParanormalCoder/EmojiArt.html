@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="face">
+    <div class="eye1">
+    </div>
+    <div class="eye2">
+    </div>
+    <div class="mouth">
+    </div>
+    <div class='brow1'>
+    </div>
+    <div class='brow2'>
+    </div>
+  </div>
+</div>
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #D0E0E3;
+  }
+
+  .face {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: yellow;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 650ms;
+  }
+  .face:hover {
+    background-color: orange;
+  }
+  .eye1 {
+    width: 40px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 100px;
+    left: 120px;
+    z-index: 20;
+  }
+  .eye2 {
+    width: 40px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 100px;
+    right: 120px;
+    z-index: 20;
+  }
+  .mouth {
+    width: 200px;
+    height: 60px;
+    border-top-left-radius: 90px 60px;
+    border-top-right-radius: 90px 60px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 2px solid black;
+    background-color: black;
+    position: absolute;
+    top: 300px;
+    left: 31%;
+    z-index: 20;
+    transform: rotate(180deg);
+    transition-duration: 650ms;
+  }
+  .face:hover .mouth {
+    transform: rotate(0deg);
+  }
+  .brow1 {
+    width: 110px;
+    height: 13px;
+    border-radius: 6%;
+    background-color: yellow;
+    position: absolute;
+    top: 85px;
+    left: 100px;
+    z-index: 20;
+    transform: rotate(25deg);
+    transition-duration: 650ms;
+  }
+  .face:hover .brow1 {
+    background-color: black;
+  }
+  .brow2 {
+    width: 110px;
+    height: 13px;
+    border-radius: 6%;
+    background-color: yellow;
+    position: absolute;
+    top: 85px;
+    right: 100px;
+    z-index: 20;
+    transform: rotate(-25deg);
+    transition-duration: 650ms;
+  }
+  .face:hover .brow2 {
+    background-color: black;
+  }
+</style>
