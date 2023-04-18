@@ -2,9 +2,9 @@ import Layout from '../../components/layout'
 import Link from 'next/link'
 import fsPromises from 'fs/promises';
 import path from 'path'
+const Filehound = require('filehound');
 
 export default function HomePage( {username, objectData}) {
-    console.log(objectData)
     var name;
     if (Object.keys(objectData).includes("Name")){
         name = objectData['Name']
@@ -31,7 +31,6 @@ export default function HomePage( {username, objectData}) {
 }
 
 export async function getStaticPaths() {
-  const Filehound = require('filehound');
 
   const subdirectories = Filehound.create()
     .path("art")
