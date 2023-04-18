@@ -1,33 +1,14 @@
 import Layout from '../../../components/layout'
 import fsPromises from 'fs/promises';
 import path from 'path'
-// const Filehound = require('filehound');
 
-export default function HomePage( {artworkCode}) {
+export default function HomePage( {username, artworkCode, artwork}) {
     return (
         <Layout pageTitle={artworkCode}>
-          <div dangerouslySetInnerHTML={{ __html: artworkCode }} />
+          <iframe scrolling="no" srcdoc={artworkCode} title="W3Schools Free Online Web Tutorials"></iframe>
         </Layout>
     );
 }
-
-// export async function getStaticPaths() {
-
-//   const subdirectories = Filehound.create()
-//     .path("art")
-//     .directory()
-//     .findSync();
-//   console.log(subdirectories);
-//   const paths = [];
-//   subdirectories.forEach(function (file) {
-//       paths.push("/user/" + file.split("/")[1]);
-//   });
-//   console.log(paths)
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// }
   
   export async function getServerSideProps({ params }) {
     const username = params.username;
@@ -47,7 +28,9 @@ export default function HomePage( {artworkCode}) {
     }
     return {
       props: {
-        artworkCode
+        username,
+        artworkCode,
+        artwork,
       },
     };
   }
