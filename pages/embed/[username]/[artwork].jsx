@@ -17,7 +17,6 @@ export default function HomePage( {artworkCode, artwork}) {
     var artworkCode;
     try{
        artworkCode = await (await fsPromises.readFile(filePath)).toString()
-       console.log(artworkCode)
     } catch {
         return {
             redirect: {

@@ -8,7 +8,7 @@ export default function HomePage( {random_art}) {
           <h1>Global CSS Art</h1>
           {random_art.map((artid) => (
             <>
-             <Link href={'/art/' + artid}>{artid.split("/")[1]} by {artid.split("/")[0]}</Link><br/>
+             <Link href={'/art/' + artid}>{artid.split("/")[1]}</Link> by <Link href={"/user/" + artid.split("/")[0]}>{artid.split("/")[0]}</Link><br/>
              <iframe width="400" height="300" scrolling="no" style={{border: "none"}} src={"/embed/" + artid} title={artid}></iframe><br/>
             </>
           ))}
