@@ -12,7 +12,7 @@ export default function HomePage( {username, artworkCode, artwork}) {
         <Layout pageTitle={artwork}>
           <h2>{artwork}</h2>
           <strong>By {username}</strong><br/>
-          <iframe width="400" height="300" scrolling="no" srcDoc={artworkCode} style={{border: "none"}} title={artwork}></iframe>
+          <iframe width="350" height="300" scrolling="no" srcDoc={artworkCode} style={{border: "none"}} title={artwork}></iframe>
           <pre>
             <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
             </pre>

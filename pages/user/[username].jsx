@@ -13,27 +13,29 @@ export default function HomePage( {username, objectData, allArt}) {
     }
     return (
         <Layout pageTitle={username}>
-          <img src={objectData['Image']} style={{borderRadius: "50%", width: "75px", height: "75px"}}></img><br/>
-          <span>{name}</span><br/>
-          {Object.keys(objectData).includes("Website") ?
-            <><a href={objectData['Website']}>Website</a><br/></>
-          : 
-          <span></span>}
-          {Object.keys(objectData).includes("GitHub") ?
-            <><a href={objectData['GitHub']}>GitHub</a><br/></>
-          : 
-          <span></span>}
-          {Object.keys(objectData).includes("Twitter") ?
-            <><a href={objectData['Twitter']}>Twitter</a><br/></>
-          : 
-          <span></span>}
-          <h2>{name}'s CSS Art</h2>
-          {allArt.map((artid) => (
-            <>
-             <Link href={'/art/' + username + "/" + artid}>{artid}</Link><br/>
-             <iframe width="400" height="300" scrolling="no" style={{border: "none"}} src={"/embed/" + username + "/" + artid} title={artid}></iframe><br/>
-            </>
-          ))}
+          <center>
+            <img src={objectData['Image']} style={{borderRadius: "50%", width: "75px", height: "75px"}}></img><br/>
+            <span>{name}</span><br/>
+            {Object.keys(objectData).includes("Website") ?
+              <><a href={objectData['Website']}>Website</a><br/></>
+            : 
+            <span></span>}
+            {Object.keys(objectData).includes("GitHub") ?
+              <><a href={objectData['GitHub']}>GitHub</a><br/></>
+            : 
+            <span></span>}
+            {Object.keys(objectData).includes("Twitter") ?
+              <><a href={objectData['Twitter']}>Twitter</a><br/></>
+            : 
+            <span></span>}
+            <h2>{name}'s CSS Art</h2>
+            {allArt.map((artid) => (
+              <>
+              <Link href={'/art/' + username + "/" + artid}>{artid}</Link><br/>
+              <iframe width="350" height="300" scrolling="no" style={{border: "none"}} src={"/embed/" + username + "/" + artid} title={artid}></iframe><br/>
+              </>
+            ))}
+          </center>
         </Layout>
     );
 }
