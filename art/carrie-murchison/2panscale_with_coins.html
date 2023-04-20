@@ -28,28 +28,4 @@ let coins = {
 };
 
 
-<script>
-//change the color of the fake coin to silver only calling the scale function 2 times
-let stacks = [];
-function scale(a, b){
-  //your code here
-   if(a === b){
-   stacks.push('7', '8', '9')
-   return 2
-  }
-   if(a > b){
-   stacks.push('1', '2', '3')
-   return 0
-  }
-   if(b > a){
-   stacks.push('4', '5', '6')
-   return 1
-  }
-}
 
-function add(n){
- return coins[n] + coins[n+1] + coins[n+2]
-};
-let firstWeigh = scale(add(1), add(4));
-let secondWeigh = scale(coins[stacks[0]], coins[stacks[1]]);
-document.getElementById(stacks[secondWeigh]).setAttribute('class', 'coin silver');</script>
