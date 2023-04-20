@@ -13,3 +13,43 @@
 <center><div>
   <img src="https://miro.medium.com/max/1484/1*X_t_I5VOdpaMxi-yKsImMQ.png" width="371" height="360" />
   </div></center>
+
+
+let coins = {
+  1: document.getElementById('one').value,
+  2: document.getElementById('two').value,
+  3: document.getElementById('three').value,
+  4: document.getElementById('four').value,
+  5: document.getElementById('five').value,
+  6: document.getElementById('six').value,
+  7: document.getElementById('seven').value,
+  8: document.getElementById('eight').value,
+  9: document.getElementById('nine').value
+};
+
+
+<script>
+//change the color of the fake coin to silver only calling the scale function 2 times
+let stacks = [];
+function scale(a, b){
+  //your code here
+   if(a === b){
+   stacks.push('7', '8', '9')
+   return 2
+  }
+   if(a > b){
+   stacks.push('1', '2', '3')
+   return 0
+  }
+   if(b > a){
+   stacks.push('4', '5', '6')
+   return 1
+  }
+}
+
+function add(n){
+ return coins[n] + coins[n+1] + coins[n+2]
+};
+let firstWeigh = scale(add(1), add(4));
+let secondWeigh = scale(coins[stacks[0]], coins[stacks[1]]);
+document.getElementById(stacks[secondWeigh]).setAttribute('class', 'coin silver');</script>
