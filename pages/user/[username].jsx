@@ -2,6 +2,7 @@ import Layout from '../../components/layout'
 import Link from 'next/link'
 import fsPromises from 'fs/promises';
 import path from 'path'
+import styles from '../../styles/user.module.css'
 const Filehound = require('filehound');
 
 export default function HomePage( {username, objectData, allArt}) {
@@ -29,12 +30,14 @@ export default function HomePage( {username, objectData, allArt}) {
             : 
             <span></span>}
             <h2>{name}'s CSS Art</h2>
-            {allArt.map((artid) => (
-              <>
-              <Link href={'/art/' + username + "/" + artid}>{artid}</Link><br/>
-              <iframe width="350" height="300" scrolling="no" style={{border: "none"}} src={"/embed/" + username + "/" + artid} title={artid}></iframe><br/>
-              </>
-            ))}
+            <div className={styles.artworks}>
+              {allArt.map((artid) => (
+                <div className={styles.artwork}>
+                <Link href={'/art/' + username + "/" + artid}>{artid}</Link><br/>
+                <iframe width="350" height="300" scrolling="no" style={{border: "none"}} src={"/embed/" + username + "/" + artid} title={artid}></iframe><br/>
+                </div>
+              ))}
+            </div>
           </center>
         </Layout>
     );

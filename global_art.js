@@ -10,5 +10,6 @@ export const global_art = [
   'vulcanwm/mask',
   'vulcanwm/soap',
   'f4rukyldrm/terminal',
-  'manohar/sphare'
+  'manohar/sphare',
+  'ryangolsing/cup'
 ]
