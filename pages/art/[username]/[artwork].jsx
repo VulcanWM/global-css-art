@@ -9,20 +9,30 @@ hljs.registerLanguage('xml', xml)
 
 export default function HomePage( {username, artworkCode, artwork, url}) {
     const highlightedCode = hljs.highlight(artworkCode, { language: 'xml' }).value
-    const [show, setShow] = useState(false);
+    const [alertshow, setalertshow] = useState(false);
     function copyText(){
       navigator.clipboard.writeText(url)
-      setShow(true)
+      setalertshow(true)
+    }
+    const [codeShow, setCodeShow] = useState(false);
+    function codeShowFunc(){
+      if (codeShow){
+        document.getElementById("showcodebtn").innerText = "Show source code"
+        setCodeShow(false)
+      } else {
+        document.getElementById("showcodebtn").innerText = "Hide source code"
+        setCodeShow(true)
+      }
     }
     return (
         <Layout pageTitle={artwork}>
-          {show ?
+          {alertshow ?
               <div className={styles.alert}>
-              <button className={styles.closealert} onClick={() => setShow(false)}>x</button>
+              <button className={styles.closealert} onClick={() => setalertshow(false)}>x</button>
               <span>Artwork URL copied</span>
               </div>
             : 
-          <span></span>}
+          <></>}
           <div className={styles.header}>
             <h2 className={styles.title}>{artwork}</h2>
             <button onClick={copyText}
@@ -30,9 +40,13 @@ export default function HomePage( {username, artworkCode, artwork, url}) {
           </div>
           <strong>By {username}</strong><br/>
           <iframe width="350" height="300" scrolling="no" srcDoc={artworkCode} style={{border: "none"}} title={artwork}></iframe>
-          <pre>
-            <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
-            </pre>
+          <br/><button onClick={codeShowFunc} id="showcodebtn">Show source code</button>
+          {codeShow ?
+              <pre>
+                <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+              </pre>
+            : 
+          <></>}
         </Layout>
     );
 }

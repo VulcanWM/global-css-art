@@ -20,15 +20,15 @@ export default function HomePage( {username, objectData, allArt}) {
             {Object.keys(objectData).includes("Website") ?
               <><a href={objectData['Website']}>Website</a><br/></>
             : 
-            <span></span>}
+            <></>}
             {Object.keys(objectData).includes("GitHub") ?
               <><a href={objectData['GitHub']}>GitHub</a><br/></>
             : 
-            <span></span>}
+            <></>}
             {Object.keys(objectData).includes("Twitter") ?
               <><a href={objectData['Twitter']}>Twitter</a><br/></>
             : 
-            <span></span>}
+            <></>}
             <h2>{name}'s CSS Art</h2>
             <div className={styles.artworks}>
               {allArt.map((artid) => (
