@@ -1,0 +1,128 @@
+  <div id="container">
+    <div class="cup">
+      <span class="heart"></span>
+      <div class="handle"></div>
+      <div class="steam">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<style>
+	#container {
+    position: relative;
+  background-color: #696d7d;
+  border-top: 100px solid #424242;
+  margin: 0;
+  padding: 0;
+  width: 350px;
+  height: 200px;
+}
+
+.cup {
+  position: absolute;
+  background: #f7d138;
+  width: 40px;
+  height: 100px;
+  bottom: 30px;
+  left: 50px;
+  border-radius: 5px 5px 15px 15px;
+  border-left: 80px solid #d3b32c;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 15px;
+  height: 50px;
+  border-radius: 15px;
+  border: 20px solid #f7d138;
+}
+
+.heart {
+  background-color: red;
+  height: 20px;
+  margin: 0 10px;
+  position: absolute;
+  top: 60px;
+  left: -50px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  background-color: red;
+  border-radius: 50%;
+  height: 20px;
+  position: absolute;
+  width: 20px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+ul {
+  padding: 0;
+  position: absolute;
+  top: -110px;
+  left: -125px;
+  transform: translateX(50%);
+  width: 100px;
+}
+
+ul li {
+  list-style: none;
+  width: 2px;
+  height: 30px;
+  background: #b1832f;
+  float: left;
+  margin: 15px;
+  animation: animate 2s infinite linear;
+  filter: blur(3px);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(3px);
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+    filter: blur(5px);
+  }
+}
+
+ul li:nth-child(1) {
+  animation-delay: 0.5s;
+}
+ul li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+ul li:nth-child(3) {
+  animation-delay: 0.2s;
+}
+ul li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+ul li:nth-child(5) {
+  animation-delay: 0.1s;
+}
+</style>
