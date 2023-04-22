@@ -1,0 +1,53 @@
+:root {
+    --primary: #14a316;
+    --dark-accent: #0f7a10;
+    --secondary: #1675da;
+    --secondary-dark-accent: #0d4683;
+}
+
+html {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary)
+}
+
+a:hover {
+    color:var(--secondary-dark-accent);
+    text-decoration: underline dotted;
+}
+
+input[type=text] {
+    padding: 10px;
+    border-radius: 30px;
+    border: 2px solid var(--primary);
+    background-color: transparent;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s;
+    width: 200px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  input[type=text]:focus {
+    border-color: var(--dark-accent);
+  }
+
+  button,input[type=submit] {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid var(--primary);
+    transition: 0.2s;
+    font-size: 17px;
+  }
+  
+  button:hover,input[type=submit]:hover {
+    border-color: var(--dark-accent);
+  }
