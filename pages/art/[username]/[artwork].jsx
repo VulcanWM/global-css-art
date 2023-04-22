@@ -29,20 +29,20 @@ export default function HomePage( {username, artworkCode, artwork, url}) {
         <Layout pageTitle={artwork}>
           <div class="homelink"><Link href="/">Home</Link></div>
           {alertshow ?
-              <div className={styles.alert}>
-              <button className={styles.closealert} onClick={() => setalertshow(false)}>x</button>
-              <span>Artwork URL copied</span>
-              </div>
+              <>
+              <button className={styles.smallbutton} onClick={() => setalertshow(false)}>x</button>
+              <strong className={styles.alert}>Artwork URL copied</strong>
+              </>
             : 
           <></>}
           <div className={styles.header}>
             <h2 className={styles.title}>{artwork}</h2>
-            <button onClick={copyText}
+            <button className={styles.smallbutton} onClick={copyText}
 >Copy artwork link</button>
           </div>
           <strong>By <Link href={"/user/" + username}>{username}</Link></strong><br/>
           <iframe width="350" height="300" scrolling="no" srcDoc={artworkCode} style={{border: "none"}} title={artwork}></iframe>
-          <br/><button onClick={codeShowFunc} id="showcodebtn">Show source code</button>
+          <br/><button className={styles.smallbutton} onClick={codeShowFunc} id="showcodebtn">Show source code</button>
           {codeShow ?
               <pre>
                 <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />

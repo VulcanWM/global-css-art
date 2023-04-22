@@ -12,9 +12,11 @@
     }
 
 .alert {
-    background-color: green;
+    color: var(--primary)
 }
 
-.closealert {
-    background-color: transparent;
+.smallbutton {
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
 }

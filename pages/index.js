@@ -2,7 +2,6 @@ import Layout from '../components/layout'
 import Link from 'next/link'
 import { useForm } from "react-hook-form";
 import { global_art } from '../global_art';
-import styles from '../styles/home.module.css'
 import { useRouter } from 'next/router'
 
 export default function HomePage( {random_art}) {
@@ -24,9 +23,9 @@ export default function HomePage( {random_art}) {
               <input {...register("search", { required: true })} placeholder="search" type="text"/>
               <input type="submit" value="search"/>
             </form>
-            <div className={styles.artworks}>
+            <div className="artworks">
               {random_art.map((artid) => (
-                <div className={styles.artwork}>
+                <div className="artwork">
                 <Link href={'/art/' + artid}>{artid.split("/")[1]}</Link> by <Link href={"/user/" + artid.split("/")[0]}>{artid.split("/")[0]}</Link><br/>
                 <iframe width="350" height="300" scrolling="no" style={{border: "none"}} src={"/embed/" + artid} title={artid}></iframe><br/>
                 </div>

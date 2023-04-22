@@ -1,7 +1,6 @@
 import Layout from '../components/layout'
 import Link from 'next/link'
 import { global_art } from '../global_art';
-import styles from '../styles/search.module.css'
 
 export default function SearchPage( { search, search_result }) {
     return (
@@ -13,9 +12,9 @@ export default function SearchPage( { search, search_result }) {
               <strong>No results found!</strong>
             : 
             <></>}
-            <div className={styles.artworks}>
+            <div className="artworks">
               {search_result.map((artid) => (
-                <div className={styles.artwork}>
+                <div className="artwork">
                 <Link href={'/art/' + artid}>{artid.split("/")[1]}</Link> by <Link href={"/user/" + artid.split("/")[0]}>{artid.split("/")[0]}</Link><br/>
                 <iframe width="350" height="300" scrolling="no" style={{border: "none"}} src={"/embed/" + artid} title={artid}></iframe><br/>
                 </div>
