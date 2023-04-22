@@ -51,3 +51,8 @@ input[type=text] {
   button:hover,input[type=submit]:hover {
     border-color: var(--dark-accent);
   }
+
+.homelink {
+    font-size: 25px;
+}
+

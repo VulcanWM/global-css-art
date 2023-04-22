@@ -15,9 +15,9 @@ export default function HomePage( {username, objectData, allArt}) {
     return (
         <Layout pageTitle={username}>
           <center>
-            <Link href="/">Home</Link>
+            <div class="homelink"><Link href="/">Home</Link></div>
             <img src={objectData['Image']} style={{borderRadius: "50%", width: "75px", height: "75px"}}></img><br/>
-            <span>{name}</span><br/>
+            <strong>{name}</strong><br/>
             {Object.keys(objectData).includes("Website") ?
               <><a href={objectData['Website']}>Website</a><br/></>
             : 
@@ -77,6 +77,10 @@ export async function getStaticPaths() {
     files.forEach(function (file) {
         allArt.push(file.split("/")[2].replace(".html", ""));
     });
+    console.log(objectData)
+    if (("Image" in objectData) == false){
+      objectData['Image'] = "/profile.jpg"
+    }
     return {
       props: {
         username,

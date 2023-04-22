@@ -27,7 +27,7 @@ export default function HomePage( {username, artworkCode, artwork, url}) {
     }
     return (
         <Layout pageTitle={artwork}>
-          <Link href="/">Home</Link>
+          <div class="homelink"><Link href="/">Home</Link></div>
           {alertshow ?
               <div className={styles.alert}>
               <button className={styles.closealert} onClick={() => setalertshow(false)}>x</button>
