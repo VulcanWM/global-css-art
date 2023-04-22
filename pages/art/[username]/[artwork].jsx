@@ -5,6 +5,7 @@ import hljs from 'highlight.js/lib/core'
 import xml from 'highlight.js/lib/languages/xml'
 import styles from '../../../styles/artwork.module.css'
 import React, { useState } from 'react';
+import Link from 'next/link'
 hljs.registerLanguage('xml', xml)
 
 export default function HomePage( {username, artworkCode, artwork, url}) {
@@ -26,6 +27,7 @@ export default function HomePage( {username, artworkCode, artwork, url}) {
     }
     return (
         <Layout pageTitle={artwork}>
+          <Link href="/">Home</Link>
           {alertshow ?
               <div className={styles.alert}>
               <button className={styles.closealert} onClick={() => setalertshow(false)}>x</button>
@@ -38,7 +40,7 @@ export default function HomePage( {username, artworkCode, artwork, url}) {
             <button onClick={copyText}
 >Copy artwork link</button>
           </div>
-          <strong>By {username}</strong><br/>
+          <strong>By <Link href={"/user/" + username}>{username}</Link></strong><br/>
           <iframe width="350" height="300" scrolling="no" srcDoc={artworkCode} style={{border: "none"}} title={artwork}></iframe>
           <br/><button onClick={codeShowFunc} id="showcodebtn">Show source code</button>
           {codeShow ?

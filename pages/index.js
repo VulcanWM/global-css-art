@@ -1,13 +1,29 @@
 import Layout from '../components/layout'
 import Link from 'next/link'
+import { useForm } from "react-hook-form";
 import { global_art } from '../global_art';
 import styles from '../styles/home.module.css'
+import { useRouter } from 'next/router'
 
 export default function HomePage( {random_art}) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
+  const router = useRouter()
+  const onSubmit = (data) => {
+    const search = data.search
+    router.push("/search?search=" + search)
+  };
     return (
         <Layout pageTitle="Home">
           <center>
             <h1>Global CSS Art</h1>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input {...register("search", { required: true })} placeholder="search" type="text"/>
+              <input type="submit" value="search"/>
+            </form>
             <div className={styles.artworks}>
               {random_art.map((artid) => (
                 <div className={styles.artwork}>
@@ -16,6 +32,7 @@ export default function HomePage( {random_art}) {
                 </div>
               ))}
             </div>
+            <strong>Artwork has finished! <a target="_blank" href="https://github.com/VulcanWM/global-css-art">Contribute</a> to add more!</strong>
           </center>
         </Layout>
     );

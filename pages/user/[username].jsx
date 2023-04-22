@@ -15,6 +15,7 @@ export default function HomePage( {username, objectData, allArt}) {
     return (
         <Layout pageTitle={username}>
           <center>
+            <Link href="/">Home</Link>
             <img src={objectData['Image']} style={{borderRadius: "50%", width: "75px", height: "75px"}}></img><br/>
             <span>{name}</span><br/>
             {Object.keys(objectData).includes("Website") ?
