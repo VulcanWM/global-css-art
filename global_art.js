@@ -1,15 +1,9 @@
-// this file contains an array with all the art ids that:
-// - can be displayed on the home page
-// - can be found via the search bar
-export const global_art = [
-  'fredoist/ghost',
-  'ParanormalCoder/EmojiArt',
-  'ParanormalCoder/PerryThePlatypusArt',
-  'vulcanwm/cloud',
-  'vulcanwm/house',
-  'vulcanwm/mask',
-  'vulcanwm/soap',
-  'f4rukyldrm/terminal',
-  'manohar/sphare',
-  'ryangolsing/cup'
-]
+const Filehound = require('filehound');
+const files = Filehound.create()
+      .paths('art')
+      .ext('html')
+      .findSync();
+export const global_art = []
+files.forEach(function (file) {
+    global_art.push(file.replace("art/", "").replace(".html", ""));
+});
