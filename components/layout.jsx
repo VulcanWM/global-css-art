@@ -27,6 +27,7 @@ export default function Layout({ pageTitle, navbar, children }) {
       {navbar != "none" ?
         <nav className={styles.mobilenav} id="navbar">
           <Link href="/">Home</Link>
+          <Link href="/about">About Us</Link>
           <a target="_blank" href="https://github.com/VulcanWM/global-css-art">GitHub Repo</a>
           <Link href="/contributors">Contributors</Link>
         </nav>
