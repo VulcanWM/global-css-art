@@ -14,4 +14,10 @@ Global CSS Art is a community dedicated to bringing together CSS artists from al
 
 Check out [CONTRIBUTING.md](https://github.com/VulcanWM/global-css-art/blob/main/CONTRIBUTING.md) to contribute!
 
+## What you get out of contributing
+
+- Your art gets featured on [our website](https://global-css-art.vercel.app/)
+- You get mentioned on the [contributors page](https://global-css-art.vercel.app/)
+- You become part of an awesome open-source community
+
 We're excited to have you join our community of CSS artists and look forward to seeing your work!
