@@ -5,9 +5,8 @@ const { Octokit } = require("@octokit/core");
 export default function ContributorsPage( {req} ) {
     return (
         <Layout pageTitle="Contributors">
-            <div class="homelink"><Link href="/">Home</Link></div>
             <h1>Global CSS Art Contributors</h1>
-            <h3>Last 100 Contributors</h3>
+            <h3>Contributors:</h3>
             <ul>
                 {req.data.map((user, index) => (
                     <div key={index}>

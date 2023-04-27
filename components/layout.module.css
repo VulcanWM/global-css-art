@@ -1,0 +1,21 @@
+.content {
+    padding: 16px;
+    padding-bottom: 80px;
+}
+
+.mobilenav {
+  background: var(--light-background);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.mobilenav a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+}

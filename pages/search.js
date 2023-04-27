@@ -6,7 +6,6 @@ export default function SearchPage( { search, search_result }) {
     return (
         <Layout pageTitle="Search">
           <center>
-            <div class="homelink"><Link href="/">Home</Link></div>
             <h1>Search results for {search}</h1>
             {search_result.length == 0 ?
               <strong>No results found!</strong>

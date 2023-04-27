@@ -4,7 +4,7 @@ import path from 'path'
 
 export default function HomePage( {artworkCode, artwork}) {
     return (
-        <Layout pageTitle={artwork}>
+        <Layout pageTitle={artwork} navbar="none">
           <div dangerouslySetInnerHTML={{ __html: artworkCode }} />
         </Layout>
     );
