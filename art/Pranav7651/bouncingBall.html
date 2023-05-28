@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: pink;
+}
+.container{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ball{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    background-color: red;
+    width: 80px;
+    height: 80px;
+    animation-duration: 2s;
+    animation-name: bouncing;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    border-radius: 100%;
+}
+
+.ground{
+    background-color: purple;
+    width: 400px;
+    height:50px;
+
+    border-radius: 100px 100px 0px 0px;
+}
+
+@keyframes bouncing {
+    0% {
+        top:163%;
+    }
+
+    50%{
+        top:-450%;
+    }
+  
+    100% {
+        top:163%;
+    }
+  }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="ball"></div>
+        <div class="ground"></div>
+    </div>
+</body>
+</html>
