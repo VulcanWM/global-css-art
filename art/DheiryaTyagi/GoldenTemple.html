@@ -1,0 +1,540 @@
+<style>
+:root {
+   --temple-bg-color: #cfb474;
+   --gray-color: #bcb9b3;
+   --dark-color: #a19f9a;
+   --gold-pillar-color: #a7925e;
+   --light-gold-color: #baa268;
+   --gate-left: 16.5%;
+   --floor-two-height: 27.4%;
+   --gate-width: 23%;
+   --floor-one-height: 22.7%;
+   --floor-three-height: 7%;
+   --width: 1340px;
+}
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+.golden-temple {
+   width: var(--width);
+   height: 100%;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+.base {
+   position: absolute;
+   width: calc(var(--width) - 20px);
+   height: var(--floor-one-height);
+   background-color: var(--gray-color);
+   left: 1%;
+   bottom: 5%;
+   border-bottom: 5px solid var(--dark-color);
+}
+.pillar {
+   background-color: var(--dark-color);
+   width: 3%;
+   height: var(--floor-one-height);
+}
+.pillar-one {
+   position: absolute;
+   left: calc(var(--gate-left) - 3%);
+   bottom: calc(5% + 5px);
+}
+.pillar-one-top {
+   position: absolute;
+   background-color: var(--gold-pillar-color);
+   width: 3%;
+   height: var(--floor-two-height);
+   left: calc(var(--gate-left) - 3%);
+   bottom: calc(5% + var(--floor-one-height) + 5px);
+}
+.pillar-two {
+   position: absolute;
+   left: calc(var(--gate-left) + var(--gate-width));
+   bottom: calc(5% + 5px);
+}
+.pillar-two-top {
+   position: absolute;
+   background-color: var(--gold-pillar-color);
+   width: 3%;
+   height: var(--floor-two-height);
+   left: calc(var(--gate-left) + var(--gate-width));
+   bottom: calc(5% + var(--floor-one-height) + 5px);
+}
+.pillar-three {
+   position: absolute;
+   right: 0.64%;
+   bottom: calc(5% + 5px);
+}
+.pillar-three-top {
+   position: absolute;
+   background-color: var(--gold-pillar-color);
+   width: 3%;
+   height: calc(var(--floor-two-height) + 5px);
+   right: 0.64%;
+   bottom: calc(5% + var(--floor-one-height));
+}
+.pillar-four {
+   position: absolute;
+   right: calc(0.64% + var(--gate-left));
+   bottom: calc(5% + 5px);
+   height: calc(var(--floor-one-height) - 5%) !important;
+}
+.pillar-four-top {
+   position: absolute;
+   background-color: var(--gold-pillar-color);
+   width: 3%;
+   height: calc(var(--floor-two-height) + 5% + 5px);
+   right: calc(0.64% + var(--gate-left));
+   bottom: calc(var(--floor-one-height));
+}
+.pillar-five {
+   position: absolute;
+   left: calc(var(--gate-left) + var(--gate-width) + var(--gate-left));
+   bottom: calc(5% + 5px);
+   height: calc(var(--floor-one-height) - 5%) !important;
+}
+.pillar-five-top {
+   position: absolute;
+   background-color: var(--gold-pillar-color);
+   width: 3%;
+   height: calc(var(--floor-two-height) + 5% + 5px);
+   left: calc(var(--gate-left) + var(--gate-width) + var(--gate-left));
+   bottom: calc(var(--floor-one-height));
+}
+.bottom-second-floor {
+   position: absolute;
+   background-color: var(--temple-bg-color);
+   left: calc(var(--gate-left) + var(--gate-width) + 3%);
+   width: calc(100% - var(--gate-left) - var(--gate-width) - 4%);
+   height: 50px;
+   bottom: var(--floor-one-height);
+}
+.outer-gate {
+   position: absolute;
+   left: var(--gate-left);
+   bottom: 5%;
+   background-color: var(--light-gold-color);
+   width: var(--gate-width);
+   height: calc(var(--floor-one-height) + 5px);
+}
+.inner-gate {
+   position: absolute;
+   left: calc(var(--gate-left) - 0.25%);
+   bottom: 5%;
+   border-radius: 190px 190px 0 0;
+   background-color: #fff;
+   width: calc(var(--gate-width) - 1px);
+   height: calc(var(--floor-one-height) - 20px);
+   border: 5px solid var(--dark-color);
+}
+.gate-one {
+   position: absolute;
+   left: calc(var(--gate-left) + var(--gate-width) + var(--gate-left) + 3% + 5.5%);
+   bottom: 5%;
+   background-color: #fff;
+   width: 10%;
+   height: calc(var(--floor-one-height) - 10%);
+   border: 5px solid var(--dark-color);
+   border-bottom: 5px solid var(--dark-color);
+}
+.gate-two {
+   position: absolute;
+   right: calc(3% + 0.64% + 2.5%);
+   bottom: 5%;
+   background-color: #fff;
+   width: 7.5%;
+   height: calc(var(--floor-one-height) - 8%);
+   border-radius: 50% 50% 0 0;
+   border: 5px solid var(--dark-color);
+   border-bottom: 5px solid var(--dark-color);
+}
+.second-floor {
+   position: absolute;
+   width: calc(var(--width) - 20px);
+   height: var(--floor-two-height);
+   background-color: var(--temple-bg-color);
+   left: 1%;
+   bottom: calc(5% + var(--floor-one-height) + 5px);
+}
+.gate-base {
+   position: absolute;
+   background-color: var(--light-gold-color);
+   width: 7%;
+   height: calc(var(--floor-two-height) - 12%);
+   border: 9px solid var(--gold-pillar-color);
+   bottom: calc(var(--floor-two-height) + 3.5%);
+}
+.gate-base-one {
+   left: 3.2%;
+}
+.gate-top {
+   position: absolute;
+   border-bottom: 40px solid var(--gold-pillar-color);
+   border-left: 20px solid transparent;
+   border-right: 20px solid transparent;
+   height: 0;
+   width: 7%;
+   bottom: calc(var(--floor-two-height) + var(--floor-two-height) - 7%);
+}
+.gate-one-top {
+   left: 2.4%;
+}
+.gate-window {
+   position: absolute;
+   background-color: #fff;
+   width: 6%;
+   height: calc(var(--floor-two-height) - 13.9%);
+   bottom: calc(var(--floor-two-height) + 5.65%);
+   border-radius: 45% 45% 0 0;
+}
+.gate-one-window {
+   left: 4.38%;
+}
+.gate-bottom-triangle {
+   position: absolute;
+   width: 0;
+   height: 0;
+   border-left: 56px solid transparent;
+   border-right: 56px solid transparent;
+   border-top: 56px solid var(--gold-pillar-color);
+   bottom: calc(var(--floor-two-height) - 3.19%);
+}
+.gate-circle {
+   position: absolute;
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background-color: var(--gold-pillar-color);
+   bottom: calc(var(--floor-two-height) - 3.49%);
+}
+.gate-base-two {
+   left: calc(var(--gate-left) + var(--gate-width) + 5.6%);
+}
+.gate-two-top {
+   left: calc(var(--gate-left) + var(--gate-width) + 4.8%);
+}
+.gate-two-window {
+   left: calc(var(--gate-left) + var(--gate-width) + 6.78%);
+}
+.gate-two-triangle {
+   left: calc(var(--gate-left) + var(--gate-width) + 5.6%);
+}
+.gate-two-circle {
+   left: calc(var(--gate-left) + var(--gate-width) + 9.2%);
+}
+.gate-base-three {
+   right: calc(var(--gate-left) - 10.2%);
+}
+.gate-three-top {
+   right: calc(var(--gate-left) - 11%);
+}
+.gate-three-window {
+   right: calc(var(--gate-left) - 9.02%);
+}
+.gate-three-triangle {
+   right: calc(var(--gate-left) - 10.2%);
+}
+.gate-three-circle {
+   right: calc(var(--gate-left) - 6.65%);
+}
+.windows-section {
+   position: absolute;
+   width: var(--gate-width);
+   height: calc(var(--floor-two-height) - 36px);
+   bottom: calc(var(--floor-two-height) + 8px);
+   background-color: var(--light-gold-color);
+   border-top: solid 35px var(--gold-pillar-color);
+}
+.windows-one {
+   left: var(--gate-left);
+}
+.windows-two {
+   left: calc(var(--gate-left) + var(--gate-width) + 19.5%);
+   width: calc(var(--gate-width) - 2.18%);
+   bottom: calc(var(--floor-two-height) - 39px);
+   height: calc(var(--floor-two-height) + 12px);
+}
+.windows-section .windows {
+   position: absolute;
+   width: 23%;
+   height: 75%;
+   top: 12.5%;
+   left: 5%;
+   background-color: #fff;
+   border: 5px solid var(--temple-bg-color);
+   border-radius: 45% 45% 0 0;
+}
+.windows-section .windows:nth-child(2) {
+   left: 36.5%;
+}
+.windows-section .windows:nth-child(3) {
+   left: 68%;
+}
+.windows-two .windows {
+   height: 70%;
+}
+.third-separator {
+   position: absolute;
+   width: calc(var(--width) - 20px);
+   height: 0;
+   border-left: 45px solid transparent;
+   border-right: 45px solid transparent;
+   border-bottom: 15px solid var(--gold-pillar-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + 5% + 3px);
+   left: -2.5%;
+}
+.third-floor {
+   position: absolute;
+   width: calc(var(--width) - 20px);
+   height: var(--floor-three-height);
+   background-color: var(--temple-bg-color);
+   left: 1%;
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + 5% + 18px);
+   border-top: 5px solid var(--gold-pillar-color);
+}
+.top-floor-pedestal {
+   position: absolute;
+   width: 12%;
+   height: 4%;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 5% + 17px);
+   border-top: none;
+   border-bottom: 5px solid var(--gold-pillar-color);
+}
+.main-pedestal {
+   position: absolute;
+   width: 25%;
+   height: 4%;
+   background-color: var(--gold-pillar-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 5% + 17px);
+   border-top: none;
+   left: 51.25%;
+}
+.top-floor-gates {
+   position: absolute;
+   width: 12%;
+   height: 10%;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 9% + 16px);
+   border-top: 5px solid var(--gold-pillar-color);
+}
+.onion-dome {
+   position: absolute;
+   width: 10vw;
+   height: 10vw;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 19%);
+   border-radius: 0% 100% 100% 100% / 100% 100% 100% 100%;
+   transform: rotateZ(45deg);
+}
+.onion-trap {
+   position: absolute;
+   width: 7.7vw;
+   height: 0;
+   border-bottom: 50px solid var(--temple-bg-color);
+   border-left: 25px solid transparent;
+   border-right: 25px solid transparent;
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 20.8%);
+}
+.dot {
+   margin-top: -7%;
+   margin-left: -7%;
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background-color: var(--gold-pillar-color);
+}
+.dotx {
+   margin-top: -75%;
+   margin-left: 46.5%;
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   background-color: var(--gold-pillar-color);
+}
+.onion-dome-one {
+   left: 9.5%;
+}
+.onion-trap-one,
+.top-floor-pedestal-one,
+.top-floor-gates-one {
+   left: 9%;
+}
+.onion-dome-two {
+   right: 3.5%;
+}
+.onion-trap-two,
+.top-floor-pedestal-two,
+.top-floor-gates-two {
+   right: 3%;
+}
+.main-onion {
+   position: absolute;
+   width: 22vw;
+   height: 22vw;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) - 7%);
+   border-radius: 0% 100% 100% 100% / 100% 100% 100% 100%;
+   transform: rotateZ(45deg);
+   left: 52%;
+}
+.onions {
+   position: absolute;
+   width: 5vw;
+   height: 5vw;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 5% + 7px);
+   left: 2.3%;
+   border-radius: 0% 100% 100% 100% / 100% 100% 100% 100%;
+   transform: rotateZ(45deg);
+}
+.onions2 {
+   position: absolute;
+   width: 5vw;
+   height: 5vw;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 5% + 7px);
+   left: 22.8%;
+   border-radius: 0% 100% 100% 100% / 100% 100% 100% 100%;
+   transform: rotateZ(45deg);
+}
+.onions3 {
+   position: absolute;
+   width: 5vw;
+   height: 5vw;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 5% + 7px);
+   left: 30%;
+   border-radius: 0% 100% 100% 100% / 100% 100% 100% 100%;
+   transform: rotateZ(45deg);
+}
+.onions4 {
+   position: absolute;
+   width: 5vw;
+   height: 5vw;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 5% + 7px);
+   left: 37%;
+   border-radius: 0% 100% 100% 100% / 100% 100% 100% 100%;
+   transform: rotateZ(45deg);
+}
+.onions5 {
+   position: absolute;
+   width: 5vw;
+   height: 5vw;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 5% + 7px);
+   left: 44%;
+   border-radius: 0% 100% 100% 100% / 100% 100% 100% 100%;
+   transform: rotateZ(45deg);
+}
+.onions6 {
+   position: absolute;
+   width: 5vw;
+   height: 5vw;
+   background-color: var(--temple-bg-color);
+   bottom: calc(var(--floor-two-height) + var(--floor-one-height) + var(--floor-three-height) + 5% + 7px);
+   left: 78%;
+   border-radius: 0% 100% 100% 100% / 100% 100% 100% 100%;
+   transform: rotateZ(45deg);
+}
+.doty {
+   margin-top: -7%;
+   margin-left: -7%;
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+   background-color: var(--gold-pillar-color);
+}    
+</style>
+<div class="golden-temple" id="art">
+	<div class="base"></div>
+	<div class="main-onion"></div>
+	<div class="outer-gate"></div>
+	<div class="inner-gate"></div>
+	<div class="second-floor"></div>
+	<div class="pillar pillar-one"></div>
+	<div class="pillar-one-top"></div>
+	<div class="pillar pillar-two"></div>
+	<div class="pillar-two-top"></div>
+	<div class="bottom-second-floor"></div>
+	<div class="pillar pillar-three"></div>
+	<div class="pillar-three-top"></div>
+	<div class="pillar pillar-four"></div>
+	<div class="pillar-four-top"></div>
+	<div class="pillar pillar-five"></div>
+	<div class="pillar-five-top"></div>
+	<div class="gate-one"></div>
+	<div class="gate-two"></div>
+	<div class="gate-base gate-base-one"></div>
+	<div class="gate-top gate-one-top"></div>
+	<div class="gate-window gate-one-window"></div>
+	<div class="gate-base gate-base-two"></div>
+	<div class="gate-top gate-two-top"></div>
+	<div class="gate-window gate-two-window"></div>
+	<div class="gate-bottom-triangle gate-two-triangle"></div>
+	<div class="gate-circle gate-two-circle"></div>
+	<div class="gate-base gate-base-three"></div>
+	<div class="gate-top gate-three-top"></div>
+	<div class="gate-window gate-three-window"></div>
+	<div class="gate-bottom-triangle gate-three-triangle"></div>
+	<div class="gate-circle gate-three-circle"></div>
+	<div class="windows-section windows-one">
+		<div class="windows"></div>
+		<div class="windows"></div>
+		<div class="windows"></div>
+	</div>
+	<div class="windows-section windows-two">
+		<div class="windows"></div>
+		<div class="windows"></div>
+		<div class="windows"></div>
+	</div>
+	<div class="third-separator"></div>
+	<div class="onions">
+		<div class="doty"></div>
+	</div>
+	<div class="onions2">
+		<div class="doty"></div>
+	</div>
+	<div class="onions3">
+		<div class="doty"></div>
+	</div>
+	<div class="onions4">
+		<div class="doty"></div>
+	</div>
+	<div class="onions5">
+		<div class="doty"></div>
+	</div>
+	<div class="onions6">
+		<div class="doty"></div>
+	</div>
+	<div class="third-floor"></div>
+	<div class="onion-dome onion-dome-one">
+		<div class="dot"></div>
+	</div>
+	<div class="onion-trap onion-trap-one"></div>
+	<div class="windows-section top-floor-gates top-floor-gates-one">
+		<div class="windows"></div>
+		<div class="windows"></div>
+		<div class="windows"></div>
+	</div>
+	<div class="top-floor-pedestal top-floor-pedestal-one"></div>
+	<div class="onion-dome onion-dome-two">
+		<div class="dot"></div>
+	</div>
+	<div class="onion-trap onion-trap-two"></div>
+	<div class="windows-section top-floor-gates top-floor-gates-two">
+		<div class="windows"></div>
+		<div class="windows"></div>
+		<div class="windows"></div>
+	</div>
+	<div class="top-floor-pedestal top-floor-pedestal-two"></div>
+	<div class="main-pedestal">
+		<div class="dotx"></div>
+	</div>
+</div>
