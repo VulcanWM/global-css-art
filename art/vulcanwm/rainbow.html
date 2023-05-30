@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Rain and Rainbow</title>
+  <style>
+    html, body {
+  height: 100vw;
+  width: 100vh;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+
+body{
+  background-color:#66D0FF;
+  width: 100vw;
+}
+
+.overlayBody {
+  background-color: #44626f;
+  width: 100vw;
+  height: 100vh;
+  z-index: -5;
+}
+
+.cloud{ 
+   margin-top:70px;
+   width:300px;
+   height:120px;
+   background:#969696;
+   box-shadow: 10px 10px rgba(0,0,0,0.2);
+   border-radius:100px;   
+}
+
+.container {
+  border-radius:100px;
+  width: 310px;
+  height: 400px;
+  position:absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  overflow:hidden;
+}
+
+.cloud::before, .cloud::after{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+}
+.cloud::before{
+    width:150px;
+    height:150px;
+    top: -70px;
+    left:280px;
+    transform: translate(-100%, 0);
+}
+
+.cloud::after {
+  width:80px;
+  height:80px;
+  top: -95px;
+  left: -1px;
+  transform: translate(-100%, 0)
+}
+
+.rain {
+  width: 4px;
+  height: 20px;
+  position:relative;
+  border-radius: 10000px;
+  background-color: #1c2435;
+}
+
+
+
+@-webkit-keyframes rainDrop {
+  from { top: 0; } 
+  to { top:190px }
+}
+
+
+
+.circle1 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  height: 150px;
+  width: 300px;
+  border-radius: 150px 150px 6px 6px; display:none;
+  background-color: #ff5757;
+}
+.circle2 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  height: 140px;
+  width: 280px;
+  border-radius: 150px 150px 6px 6px;
+  background-color: #ffa552;
+}
+.circle3 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  height: 130px;
+  width: 260px;
+  border-radius: 150px 150px 6px 6px;
+  background-color: #ffe14d;
+}
+.circle4 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  height: 120px;
+  width: 240px;
+  border-radius: 150px 150px 6px 6px;
+  background-color: #56f561;
+}
+.circle5 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  height: 110px;
+  width: 220px;
+  border-radius: 150px 150px 6px 6px;
+  background-color: #52cbff;
+}
+.circle6 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  height: 100px;
+  width: 200px;
+  border-radius: 150px 150px 6px 6px;
+  background-color: #545af2;
+}
+.circle7 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  height: 90px;
+  width: 180px;
+  border-radius: 150px 150px 6px 6px;
+  background-color: #c96cf4;
+}
+.circle8 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  height: 80px;
+  width: 160px;
+  border-radius: 150px 150px 0px 0px;
+  background-color: #66D0FF;
+}
+  </style>
+</head>
+
+<body>
+  <div class='overlayBody' id='overlay'></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <div class='container' id='container'>
+    <div class='cloud' id='cloud'></div>
+    <div class='drops' id='drops'></div>
+
+    <div class='circle1' id='circle'/>
+    <div class='circle2'/>
+    <div class='circle3'/>
+    <div class='circle4'/>
+    <div class='circle5'/>
+    <div class='circle6'/>
+    <div class='circle7'/>
+    <div class='circle8'/>
+    
+  </div>
+
+  <script>
+    function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+(async() => {
+  var toContinue = true;
+  index = 0;
+  while (toContinue) {
+    drop = document.createElement("div")
+    drop.classList.add("rain")
+    drop.style.animation = `${(Math.floor(Math.random() * 7) / 20) + 0.3}s linear 0s infinite rainDrop`;
+  
+    drop.style.left = `${Math.floor(Math.random() * 297)}px`
+    
+    document.getElementById("drops").appendChild(drop);
+    await sleep(75)
+
+    index++
+    if (index == 80) {
+      toContinue = false;
+      document.getElementById("drops").remove();
+
+      setTimeout(() => {
+        $('#overlay').fadeOut(2000);
+        $('#cloud').fadeOut(2000);
+
+        setTimeout(() => {
+          $('#circle').fadeIn(2000);
+        }, 1000)
+      },1000) 
+    }
+  }
+})()
+
+  </script>
+
+
+</body>
+
+</html>
