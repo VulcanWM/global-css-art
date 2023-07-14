@@ -22,6 +22,7 @@ export default function Layout({ pageTitle, navbar, children }) {
         <meta property="og:site_name" content={siteTitle} />
         <meta name="robots" content="index, follow"/>
         <meta property="og:type" content="Website" />
+        <meta name="google-site-verification" content="d3cd3FIDhsMDI3e_zwDnkg4GLGdu-cJu23VVpa-eC6o" />
         <title>{siteTitle} - {pageTitle}</title>
       </Head>
       {navbar != "none" ?
